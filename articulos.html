@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda de Maquillaje</title>
+</head>
+<body>
+  <header>
+    <div class="contenedor">
+      <a href="index.html" class="boton">Inicio</a>
+      <a href="historia.html" class="boton">Conócenos</a>
+      <a href="maquillaje.html" class="boton">Maquillaje</a>
+      <a href="skinker.html" class="boton">Skinker</a>
+      <a href="fragancias.html" class="boton">Fragancias</a>
+      <a href="secion.html" class="boton">Únete</a>
+      <a href="carritoo.html" class="boton">Carrito</a>
+    </div>
+  </header>
+
+<div class="slider-container">
+  <div class="slide active-slide">
+    <img src="img/descuento.png" alt="Promo Maquillaje">
+    <h3>Descuento en Maquillaje</h3>
+    <p>¡Luce increíble con un 20% de descuento en todos los productos de maquillaje!</p>
+  </div>
+
+  <div class="slide">
+    <img src="img/descuento1.png" alt="Promo Skincare">
+    <h3>2x1 en Skincare</h3>
+    <p>Cuida tu piel: lleva 2 productos de skincare y paga solo 1.</p>
+  </div>
+
+  <div class="slide">
+    <img src="img/descuento2.png" alt="Promo Fragancias">
+    <h3>Fragancias a Mitad de Precio</h3>
+    <p>Fragancias seleccionadas hasta con un 50% de descuento. ¡Aprovecha ya!</p>
+  </div>
+
+  <div class="nav-buttons">
+    <button onclick="cambiarSlide(-1)">❮</button>
+    <button onclick="cambiarSlide(1)">❯</button>
+  </div>
+</div>
+
+<script>
+  let indice = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function mostrarSlide(i) {
+    slides.forEach(slide => slide.classList.remove('active-slide'));
+    slides[i].classList.add('active-slide');
+  }
+
+  function cambiarSlide(dir) {
+    indice += dir;
+    if (indice < 0) indice = slides.length - 1;
+    if (indice >= slides.length) indice = 0;
+    mostrarSlide(indice);
+  }
+
+  // Cambio automático cada 5 segundos
+  setInterval(() => {
+    cambiarSlide(1);
+  }, 5000);
+</script>
+
+</body>
+</html>
+
+    <div class="product-container">
+    <div class="product">
+      <img src="img/Delineador Dior.jpg" alt="Delineador Dior" />
+      <h3>Delineador Dior</h3>
+      <p>Delineador super práctico y contra el agua.</p>
+      <p class="price">$250.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Delineador Dior', 250)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="img/Paleta de sombras Dior.jpg" alt="Paleta de sombras Dior" />
+      <h3>Paleta de sombras Dior</h3>
+      <p>Naturalidad y estilo todo el día.</p>
+      <p class="price">$250.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Paleta de sombras Dior', 250)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="img/glosdior.jpeg" alt="Gloss Dior" />
+      <h3>Gloss Dior</h3>
+      <p>Brillo irresistible y lujo en cada aplicación.</p>
+      <p class="price">$1500.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Gloss Dior', 1500)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="img/base00.png" alt="Base de Maquillaje" />
+      <h3>Base de Maquillaje</h3>
+      <p>Cobertura alta para todo tipo de piel.</p>
+      <p class="price">$350.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Base de Maquillaje', 350)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="img/fijador.jpeg" alt="Rimel para pestañas" />
+      <h3>Rimel para pestañas</h3>
+      <p>Duración y frescura todo el día.</p>
+      <p class="price">$65.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Rimel para pestañas', 65)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="img/gelcejas.jpeg" alt="Gel para cejas" />
+      <h3>Gel para cejas</h3>
+      <p>Define y fija tus cejas con estilo.</p>
+      <p class="price">$250.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Gel para cejas', 250)">🛒</button>
+    </div>
+
+    <div class="product">
+      <img src="img/Rubor bissu.jpg" alt="Rubor Bissu" />
+      <h3>Rubor Bissu</h3>
+      <p>Color radiante y natural.</p>
+      <p class="price">$65.00</p>
+      <button class="btn-carrito" onclick="agregarAlCarrito('Rubor Bissu', 65)">🛒</button>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      localStorage.removeItem('carrito');
+    };
+
+    function agregarAlCarrito(nombre, precio) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert(`${nombre} ha sido agregado al carrito.`);
+    }
+  </script>
+</body>
+</html>

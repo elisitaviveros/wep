@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Perfil de Usuario</title>
+</head>
+<header>
+    <body bgcolor="#bb8fce">
+
+        <div class="contenedor"> 
+       <a href="index.html" class="boton">Inicio</a> 
+        <a href="historia.html" class="boton">Conocenos</a>
+        <a href="articulos.html" class="boton">Articulos</a>
+        <a href="maquillaje.html" class="boton">Maquillaje</a>
+        <a href="skinker.html" class="boton">Skinker</a>
+        <a href="fragancias.html" class="boton">Fragancias</a>
+          <a href="carritoo.html" class="boton">Carrito</a>
+</body>
+</header>
+<h2>Registrarse</h2>
+  <div id="registroForm">
+    <input type="text" id="nombre" placeholder="Nombre" required><br>
+    <input type="email" id="correo" placeholder="Correo electrónico" required><br>
+    <input type="password" id="contrasena" placeholder="Contraseña" required><br>
+    <button onclick="registrarse()">Registrar</button>
+  </div>
+
+  <h2>Iniciar Sesión</h2>
+  <div id="loginForm">
+    <input type="email" id="loginCorreo" placeholder="Correo electrónico" required><br>
+    <input type="password" id="loginContrasena" placeholder="Contraseña" required><br>
+    <button onclick="iniciarSesion()">Iniciar sesión</button>
+  </div>
+
+  <div id="perfil" class="card">
+    <h2>Bienvenido, <span id="nombreUsuario"></span></h2>
+    <p>Email: <span id="correoUsuario"></span></p>
+    <button id="logoutBtn" onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+
+  <script>
+    function registrarse() {
+      const nombre = document.getElementById('nombre').value;
+      const correo = document.getElementById('correo').value;
+      const contrasena = document.getElementById('contrasena').value;
+
+      const usuario = { nombre, correo, contrasena };
+      localStorage.setItem('usuarioRegistrado', JSON.stringify(usuario));
+      alert('✅ Registrado correctamente');
+    }
+
+    function iniciarSesion() {
+      const correo = document.getElementById('loginCorreo').value;
+      const contrasena = document.getElementById('loginContrasena').value;
+
+      const usuarioGuardado = JSON.parse(localStorage.getItem('usuarioRegistrado'));
+
+      if (usuarioGuardado && usuarioGuardado.correo === correo && usuarioGuardado.contrasena === contrasena) {
+        mostrarPerfil(usuarioGuardado);
+      } else {
+        alert('❌ Correo o contraseña incorrectos');
+      }
+    }
+
+    function mostrarPerfil(usuario) {
+      document.getElementById('perfil').style.display = 'block';
+      document.getElementById('logoutBtn').style.display = 'inline-block';
+      document.getElementById('registroForm').style.display = 'none';
+      document.getElementById('loginForm').style.display = 'none';
+      document.getElementById('nombreUsuario').innerText = usuario.nombre;
+      document.getElementById('correoUsuario').innerText = usuario.correo;
+    }
+
+    function cerrarSesion() {
+      document.getElementById('perfil').style.display = 'none';
+      document.getElementById('logoutBtn').style.display = 'none';
+      document.getElementById('registroForm').style.display = 'block';
+      document.getElementById('loginForm').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
+</body>
+</html>

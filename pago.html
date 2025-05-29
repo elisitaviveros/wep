@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Formulario de Pago</title>
+</head>
+<body>
+   <header>
+    <div class="product-container">
+      <a href="index.html" class="btn">Inicio</a>
+      <a href="historia.html" class="btn">Conócenos</a>
+      <a href="maquillaje.html" class="btn">Maquillaje</a>
+      <a href="skinker.html" class="btn">Skincare</a>
+      <a href="fragancias.html" class="btn">Fragancias</a>
+      <a href="secion.html" class="btn">Únete</a>
+      <a href="carritoo.html" class="btn">Carrito</a>
+    </div>
+  </header>
+</body>
+<body>
+  <h1>Datos para el pago</h1>
+  <form onsubmit="event.preventDefault(); alert('¡Pago procesado!');">
+    <label>Nombre completo:</label>
+    <input type="text" required>
+    <label>Número de tarjeta:</label>
+    <input type="text" maxlength="16" required>
+    <label>Fecha de vencimiento:</label>
+    <input type="month" required>
+    <label>CVV:</label>
+    <input type="text" maxlength="3" required>
+    <label>Dirección de envío:</label>
+    <input type="text" required>
+    <button type="submit">Finalizar
+    </button>
+  </form>
+</body>

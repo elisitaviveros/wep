@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda de Maquillaje</title>
+</head>
+
+<header>
+    <body bgcolor="#bb8fce">
+
+        <div class="contenedor">  
+        <a href="historia.html" class="boton">Conocenos</a>
+        <a href="articulos.html" class="boton">Articulos</a>
+        <a href="maquillaje.html" class="boton">Maquillaje</a>
+        <a href="skinker.html" class="boton">Skinker</a>
+        <a href="fragancias.html" class="boton">Fragancias</a>
+        <a href="secion.html" class="boton">Unete</a>
+          <a href="carritoo.html" class="boton">Carrito</a>
+</body>
+</header>
+<head>
+    <div class="product-container">
+        <div class="product">
+            <img src="img/logo.jpg" alt="Logo">
+            <p>Elizabeth, fundadora de la marca, creció rodeada de mujeres fuertes que usaban el maquillaje no para esconderse, sino para expresarse. Pero también vivió en carne propia lo difícil que era encontrar productos que fueran hermosos, seguros para la piel y que, además, olieran a confianza.
+
+Después de años de probar marcas sin resultados reales, decidió crear lo que no encontraba: una línea que cuidara la piel como un abrazo, maquillara como una obra de arte y dejara una fragancia que hablara sin palabras.
+
+Así nació Elizzabetth Products:</p>
+        </div>
+        <div class="product">
+            <img src="img/pro.jpg" alt="Promocion 1">
+        </div>
+        <div class="product">
+            <img src="img/pro2.jpg" alt="Promocion 2">
+        </div>
+           <div class="product">
+            <img src="img/pro3.jpg" alt="Promocion 3">
+        </div>
+         <div class="product">
+            <img src="img/pro4.jpg" alt="Promocion 4">
+        </div>
+            <div class="product">
+            <img src="img/pro5.jpg" alt="Promocion 5">
+        </div>
+    </div>
+    <script>
+    window.onload = function() {
+        localStorage.removeItem('carrito');
+    };
+
+    function 🛒 (nombre, precio) {
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.push({ nombre, precio });
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+</script>
+</head>
+<footer style="background-color: #bb8fce; padding: 20px; text-align: center; color: white;">
+  <h3>Síguenos en nuestras redes</h3>
+  <div style="display: flex; justify-content: center; gap: 25px; margin-top: 15px;">
+    <a href="https://instagram.com" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 40px; filter: drop-shadow(2px 2px 3px #debaec);" />
+    </a>
+    <a href="https://facebook.com" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="width: 40px; filter: drop-shadow(2px 2px 3px #debaec);" />
+    </a>
+    <a href="https://tiktok.com" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" style="width: 40px; filter: drop-shadow(2px 2px 3px #debaec);" />
+    </a>
+    <a href="https://wa.me/1234567890" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 40px; filter: drop-shadow(2px 2px 3px #debaec);" />
+    </a>
+  </div>
+</footer>
+</body>
+</html>

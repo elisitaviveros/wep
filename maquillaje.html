@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda de Maquillaje</title>
+</head>
+    <header>
+        <div class="contenedor">
+        <a href="index.html" class="boton">Inicio</a>
+        <a href="historia.html" class="boton">Conocenos</a>
+        <a href="articulos.html" class="boton">Articulos</a>
+        <a href="skinker.html" class="boton">Skinker</a>
+        <a href="fragancias.html" class="boton">Fragancias</a>
+        <a href="secion.html" class="boton">Unete</a>
+        <a href="carritoo.html" class="boton">Carrito</a>
+    </header>
+</div>
+<body>
+<head>
+    <div class="product-container">
+        <div class="product">
+            <img src="img/fijador.jpeg" alt="Producto 2">
+            <h3>Fijador de maquillaje</h3>
+            <p>Haz que tu maquillaje dure todo el día con nuestro fijador: frescura, fijación y un acabado impecable en cada aplicación.</p>
+            <p class="price">$150.00</p>
+              <button onclick="agregarAlCarrito('Fijador de maquillaje', 150.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/gelcejas.jpeg" alt="Producto 3">
+            <h3>Gel para cejas</h3>
+            <p>Define, fija y resalta tus cejas con el gel perfecto. Naturalidad y estilo todo el dia, con el toque que tus cejas merecen.</p>
+            <p class="price">$250.00</p>
+             <button onclick="agregarAlCarrito('Gel de cejas', 250.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/glosdior.jpeg" alt="Producto 5">
+            <h3>Gloss Dior</h3>
+            <p>Brillo irresistible y un toque de lujo en cada aplicacion. Descubre el gloss Dior, donde la elegancia se encuentra con la perfeccion.</p>
+            <p class="price">$2000.00</p>
+            <button onclick="agregarAlCarrito('Gloss Dior', 2000.00)">🛒</button>        </div>
+           <div class="product">
+            <img src="img/base.jpeg" alt="Producto 7">
+            <h3>Base de Maquillaje</h3>
+            <p>Base líquida de alta cobertura, ideal para todo tipo de piel.</p>
+            <p class="price">$350.00</p>
+            <button onclick="agregarAlCarrito('Base de Maquillaje', 350.00)">🛒</button>
+        </div>
+         <div class="product">
+            <img src="img/Delineador Dior.jpg" alt="Producto 8">
+            <h3>Delineador Dior</h3>
+            <p>Delineador super practico y contra el agua.</p>
+            <p class="price">$250.00</p>
+            <button onclick="agregarAlCarrito('Delineador Dior', 250.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/Delineador de labios.jpg" alt="Producto 9">
+            <h3>Delineador de labios</h3>
+            <p>Delineador de labios ofrece un trazo suave y definido, perfecto para perfilar, rellenar y dar volumen.</p>
+            <p class="price">$89.00</p>
+            <button onclick="agregarAlCarrito('Delineador de Labios', 89.00)">🛒</button>        </div>
+        <div class="product">
+            <img src="img/Paleta de sombras Dior.jpg" alt="Producto 11">
+            <h3>Paleta de sombras Dior</h3>
+        <p>La paleta de sombras Dior combina lujo y pigmentación en tonos sofisticados y versátiles. Con una textura sedosa y de fácil difuminado.</p>
+            <p class="price">$956.00</p>
+              <button onclick="agregarAlCarrito('Paleta de sombras Dior', 956.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/Toallas desmaquillantes.jpg" alt="Producto 12">
+            <h3>Toallas desmaquillantes</h3>
+            <p>Nuestras toallitas desmaquillantes eliminan suavemente el maquillaje, incluso a prueba de agua, dejando la piel fresca e hidratada.</p>
+            <p class="price">$150.00</p>
+              <button onclick="agregarAlCarrito('Toallas desmaquillantes', 150.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/Lapiz para labios.jpg" alt="Producto 13">
+            <h3>Lapiz labial</h3>
+            <p>Nuestro lápiz labial desliza suavemente, brindando un color vibrante y de larga duración.</p>
+            <p class="price">$150.00</p>
+             <button onclick="agregarAlCarrito('Lapiz Labial', 150.00)">🛒</button>
+        </div>
+              <div class="product">
+            <img src="img/Rimel.jpg" alt="Producto 16">
+            <h3>Rimel para pestañas</h3>
+            <p> El rimel Prosa negro aporta volumen, alargamiento y definición con su fórmula de larga duración y resistente al agua.</p>
+            <p class="price">$65.00</p>
+             <button onclick="agregarAlCarrito('Rimel para pestañas', 65.00)">🛒</button>
+        </div>
+                <div class="product">
+            <img src="img/Rubor bissu.jpg" alt="Producto 17">
+            <h3>Rubor Bissu</h3>
+            <p> El rubor Bissú ofrece una pigmentación intensa y de fácil difuminado, perfecto para resaltar tus mejillas con un acabado natural y aterciopelado. </p>
+            <p class="price">$65.00</p>
+              <button onclick="agregarAlCarrito('Rubor Bissu', 65.00)">🛒</button>
+        </div>
+         <div class="product">
+            <img src="img/Balsamo labello.jpg" alt="Producto 18">
+            <h3>Balsamo Labello</h3>
+            <p> Labello ofrece una hidratación intensa y duradera, protegiendo tus labios de la sequedad y dejándolos suaves y suaves.</p>
+            <p class="price">$80.00</p>
+             <button onclick="agregarAlCarrito('Balsamo Labelllo', 80.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/Tinta.jpeg" alt="Producto ">
+            <h3>Tinta</h3>
+            <p> Nuestra tinta labial ofrece un acabado suave y natural, con una fórmula de larga duración que se adapta perfectamente a tus labios. </p>
+            <p class="price">$25.00</p>
+              <button onclick="agregarAlCarrito('Tinta', 25.00)">🛒</button>
+        </div>                  
+                <div class="product">
+            <img src="img/Glos.jpeg" alt="Producto 20">
+            <h3>Gloss</h3>
+            <p>El gloss Dior aporta un brillo deslumbrante y una hidratación profunda, con una textura suave que no pegajosa.</p>
+            <p class="price">$2500.00</p>
+             <button onclick="agregarAlCarrito('Glosss', 2500.00)">🛒</button>
+       </div>
+                 <div class="product">
+            <img src="img/Sheglam.jpg" alt="Producto 21">
+            <h3>Sheglam</h3>
+            <p> El rubor SheGlam ofrece una textura suave y sedosa, perfecta para un acabado natural o más intenso, según tu estilo. </p>
+            <p class="price">$300.00</p>
+            <button onclick="agregarAlCarrito('Sheglam', 300.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/Paleta de maquillaje.jpg" alt="Producto 23">
+            <h3>Paleta de maquillaje</h3>
+            <p>Nuestra paleta de maquillaje incluye una selección de tonos versátiles para ojos, mejillas y rostro, permitiéndote crear looks infinitos, desde los más sutiles hasta los más dramáticos. </p>
+            <p class="price">$350.00</p>
+            <button onclick="agregarAlCarrito('paleta de maquillaje', 350.00)">🛒</button>
+        </div>
+          <div class="product">
+            <img src="img/Enchinador.jpg" alt="Producto 24">
+            <h3>Enchinador</h3>
+            <p>Nuestro enchinador de pestañas te ofrece un rizo duradero y natural sin dañar tus pestañas.</p>
+            <p class="price">$50.00</p>
+            <button onclick="agregarAlCarrito('Enchinador', 50.00)">🛒</button>
+        </div>
+         <div class="product">
+            <img src="img/pomada para cejas.jpeg" alt="Producto 26">
+            <h3>Pomada para cejas cafe</h3>
+            <p>Nuestro enchinador de pestañas te ofrece un rizo duradero y natural sin dañar tus pestañas.</p>
+            <p class="price">$120.00</p>
+            <button onclick="agregarAlCarrito('Pomada para cejas cafe', 120.00)">🛒</button>
+        </div>
+         <div class="product">
+            <img src="img/Gelfacial.jpeg" alt="Producto 27">
+            <h3>Gel facial</h3>
+            <p>Crema hidratante para piel seca, con vitamina E.</p>
+            <p class="price">$15.00</p>
+            <button onclick="agregarAlCarrito('Gel facial', 15.00)">🛒</button>
+        </div>
+        <div class="product">
+            <img src="img/Tonico.jpeg" alt="Producto 32">
+            <h3>Base de Maquillaje</h3>
+            <p>Base líquida de alta cobertura, ideal para todo tipo de piel.</p>
+            <p class="price">$25.00</p>
+            <button onclick="agregarAlCarrito('Base de Maquillaje', 25.00)">🛒</button>
+        </div>
+  <script>
+    function agregarAlCarrito(nombre, precio) {
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  carrito.push({ nombre, precio });
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  alert(`${nombre} ha sido agregado al carrito.`);
+}
+
+</script>
+</head>
+</body>
+</html>

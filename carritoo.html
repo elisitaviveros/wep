@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de Maquillaje</title>
+</head>
+<body>
+  <header>
+    <div class="product-container">
+      <a href="index.html" class="btn">Inicio</a>
+      <a href="historia.html" class="btn">Conócenos</a>
+      <a href="maquillaje.html" class="btn">Maquillaje</a>
+      <a href="skinker.html" class="btn">Skincare</a>
+      <a href="fragancias.html" class="btn">Fragancias</a>
+      <a href="secion.html" class="btn">Únete</a>
+      <a href="carritoo.html" class="btn">Carrito</a>
+    </div>
+  </header>
+
+  <div id="contenido-carrito"></div>
+
+  <div id="botones-carrito">
+    <button class="btn" id="btnPagar">Pagar</button>
+    <button class="btn" id="btnBorrar">Borrar</button>
+  </div>
+
+  <script>
+    window.onload = function () {
+      mostrarCarrito();
+    };
+    function agregarAlCarrito(nombre, precio) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      mostrarCarrito();
+      alert(`${nombre} ha sido agregado al carrito.`);
+    }
+
+    function mostrarCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const contenedor = document.getElementById('contenido-carrito');
+      contenedor.innerHTML = ''; // limpiar contenido antes de mostrar
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = '<p>Tu carrito está vacío.</p>';
+      } else {
+        let total = 0;
+        carrito.forEach(producto => {
+          const p = document.createElement('p');
+          p.textContent = `${producto.nombre} - $${producto.precio}`;
+          contenedor.appendChild(p);
+          total += producto.precio;
+        });
+        const totalP = document.createElement('p');
+        totalP.innerHTML = `<strong>Total: $${total}</strong>`;
+        contenedor.appendChild(totalP);
+      }
+    }
+
+    // Botón Pagar: redirige a la página de pago
+    document.getElementById('btnPagar').addEventListener('click', function() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      if (carrito.length === 0) {
+        alert('El carrito está vacío. Agrega productos antes de pagar.');
+      } else {
+        window.location.href = 'pago.html';
+      }
+    });
+
+    // Botón Borrar: limpia el carrito
+    document.getElementById('btnBorrar').addEventListener('click', function() {
+      if (confirm('¿Seguro que quieres borrar todos los productos del carrito?')) {
+        localStorage.removeItem('carrito');
+        mostrarCarrito();
+      }
+    });
+  </script>
+</body>
+</html>
